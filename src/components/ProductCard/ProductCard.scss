@@ -1,0 +1,80 @@
+@import "/src/common/color.scss";
+
+.product-card {
+  margin: 5px;
+  background: $third-color;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 195px;
+  height: 325px;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 8px;
+
+  &:hover {
+    transform: scale(1.01);
+    transition: all 0.3s;
+    // animation: blinker 0.1s linear;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.card-top {
+  height: 195px;
+  img {
+    width: 190px;
+    height: 195px;
+  }
+}
+
+.card-info {
+  height: 35px;
+}
+.card-price {
+  margin-left: 5px;
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(255, 66, 78);
+}
+
+.card-price--original {
+  margin-left: 5px;
+  font-size: 12px;
+  color: $font-primary;
+  text-decoration: line-through;
+}
+
+.card-control {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+  .product-card,
+  .card-control,
+  .card-price,
+  .card-price--original {
+    padding: 0;
+    margin: 0;
+  }
+  .product-card {
+    width: 175px;
+    height: 300px;
+    border: 1px solid rgb(238, 238, 238);
+  }
+
+  .card-top {
+    width: 170px;
+    height: 175px;
+    img {
+      width: 170px;
+      height: 175px;
+    }
+  }
+}

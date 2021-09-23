@@ -1,0 +1,33 @@
+@import "/src/common/color.scss";
+
+.header {
+  background-color: $secondary-color;
+  height: 72px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: $font-secondary;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.user-image,
+.user-image img {
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 38px;
+  height: 38px;
+}
+
+.user-name {
+  margin-top: 10px;
+  color: $font-secondary;
+  text-align: left;
+  font-size: 12px;
+  overflow: hidden;
+}

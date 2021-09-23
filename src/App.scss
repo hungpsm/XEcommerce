@@ -1,0 +1,51 @@
+@import "/src/common/color.scss";
+@import "~bootstrap/scss/bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: $primary-color;
+}
+
+.home-page {
+  position: relative; ;
+  display: block;
+}
+.btn-order {
+  margin-left: 5px;
+  font-size: 12px;
+  background-color: #ee4d2d;
+}
+.btn-view {
+  margin-right: 5px;
+  font-size: 12px;
+  margin: 0px 10px;
+  background-color: #04aa6d;
+
+  &:hover {
+    background-color: #6c757d;
+  }
+}
+.btn-search {
+  margin-left: 5px;
+ 
+}
+
+

@@ -1,0 +1,39 @@
+@import "/src/common/color.scss";
+.product-list {
+  margin-left: auto;
+  margin-right: auto;
+  background: $primary-color;
+
+  h2 {
+    margin: 5px;
+    text-align: center;
+    color: $font-primary;
+  }
+  h4 {
+    // text-align: center;
+    color: $font-primary;
+    margin: 5px;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 5px;
+    text-align: left;
+    color: $font-primary;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+
+@media (max-width: 800px) {
+  .product-list {
+    padding: 0;
+    margin: 0;
+  }
+}

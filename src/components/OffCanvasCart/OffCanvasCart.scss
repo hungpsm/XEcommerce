@@ -1,0 +1,25 @@
+.item-cart {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.item-qty {
+  width: 25px;
+  text-align: center;
+  margin: 5px;
+}
+
+.item-price {
+  text-align: right;
+}
+
+.item-submit {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.item-close {
+  margin-left: 5px;
+  margin-right: 5px;
+}

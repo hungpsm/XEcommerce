@@ -1,0 +1,40 @@
+.carousel {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  width: 824px;
+  height: 274px;
+  padding-right: 10px;
+  img {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    //   height: calc(((100vw - 24px) * 116) / 351);
+  }
+}
+
+.item-responsive {
+  width: 408px;
+  height: 274px;
+  padding-right: 10px;
+  img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .carousel-slide {
+    padding: 0;
+    margin: 0;
+    margin-bottom:20px;
+    height: calc(((100vw - 24px) * 116) / 351);
+  }
+}
