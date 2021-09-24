@@ -57,12 +57,16 @@
 
 @media (max-width: 800px) {
   .product-card,
-  .card-control,
-  .card-price,
-  .card-price--original {
+  .card-control {
     padding: 0;
     margin: 0;
   }
+
+  .card-price,
+  .card-price--original {
+    margin-left: 5px;
+  }
+
   .product-card {
     width: 175px;
     height: 300px;

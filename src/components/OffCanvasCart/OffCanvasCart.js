@@ -1,18 +1,15 @@
 import CartItemsContext from "common/constant";
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Offcanvas, Button, Card } from "react-bootstrap";
 import "components/OffCanvasCart/OffCanvasCart.scss";
+
+import { useDispatch } from "react-redux";
+import { decrement } from "features/Navigator/QtyCardSlice";
 
 function OffCanvasCart() {
   const [show, setShow] = useState(false);
   const itemsCart = useContext(CartItemsContext);
-
+  const dispatch = useDispatch();
   const [update, setUpdate] = useState(false);
   const refSumAmt = useRef(0);
 
@@ -42,12 +39,15 @@ function OffCanvasCart() {
     const indexItem = itemsCart.findIndex((item) => item.id === itemClick.id);
     const intQtyOrder = itemClick.qtyOrder;
 
-    intQtyOrder === 1
-      ? itemsCart.splice(indexItem, 1)
-      : itemsCart.splice(indexItem, 1, {
-          ...itemClick,
-          qtyOrder: intQtyOrder - 1,
-        });
+    if (intQtyOrder === 1) {
+      itemsCart.splice(indexItem, 1);
+      dispatch(decrement());
+    } else {
+      itemsCart.splice(indexItem, 1, {
+        ...itemClick,
+        qtyOrder: intQtyOrder - 1,
+      });
+    }
 
     setRefAmt();
     setUpdate((preState) => !preState);
@@ -63,14 +63,15 @@ function OffCanvasCart() {
 
   return (
     <div className="cart-shopping">
-      <Button variant="warning" onClick={handleShow}>
-        Cart {itemsCart.length > 0 && itemsCart.length}
+      <Button className="btn-cart" variant="success" onClick={handleShow}>
+        Cart
       </Button>
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
         </Offcanvas.Header>
+
         <Offcanvas.Body>
           Please check your cart before any processing payment is done
           {itemsCart.length > 0 &&
@@ -99,11 +100,11 @@ function OffCanvasCart() {
               </Card>
             ))}
           <Card key={99999999} border="light">
-            <Card.Text>Subtotal</Card.Text>
-
-            <div className="item-price">
-              <Card.Text>{"Total payment"}</Card.Text>
-              <Card.Text>{formatter.format(refSumAmt.current)} </Card.Text>
+            <div className="item-subtotal">
+              <Card.Text>
+                {"Total = "}
+                {formatter.format(refSumAmt.current)}{" "}
+              </Card.Text>
             </div>
 
             <div className="item-submit">

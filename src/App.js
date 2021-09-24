@@ -12,6 +12,8 @@ import PageNotFound from "components/PageNotFound/PageNotFound";
 import Navigator from "components/Navigator/Navigator";
 import Carousels from "components/Carousels/Carousels";
 
+import cart from "images/cart.png";
+
 function App() {
   const [productList, setProductList] = useState({ data: [] });
 
@@ -37,25 +39,30 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <Router>
-        <Header> </Header>
-        <div className="home-page">
-          <Navigator />
-          <Carousels />
+    <>
+      <div className="app">
+        <Router>
+          <Header> </Header>
+          <div className="home-page">
+            <Navigator />
+            <Carousels />
 
-          <div className="container">
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/product" component={ProductList} />
-              <Route component={PageNotFound} />
-            </Switch>
+            <div className="container">
+              {/* <div className="cart-image">
+                <img src={cart} alt="cart" />
+              </div> */}
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/product" component={ProductList} />
+                <Route component={PageNotFound} />
+              </Switch>
+            </div>
           </div>
-        </div>
 
-        <Footer></Footer>
-      </Router>
-    </div>
+          <Footer></Footer>
+        </Router>
+      </div>
+    </>
   );
 }
 

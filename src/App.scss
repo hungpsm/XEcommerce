@@ -25,7 +25,7 @@ body {
 }
 
 .home-page {
-  position: relative; ;
+  position: relative;
   display: block;
 }
 .btn-order {
@@ -43,9 +43,39 @@ body {
     background-color: #6c757d;
   }
 }
-.btn-search {
-  margin-left: 5px;
- 
-}
 
+// .cart-image,
+// .cart-image img {
+//   position: fixed;
+//   bottom: 20px;
+//   right: 20px;
+//   z-index: 999;
+//   display: none;
+//   width: 48px;
+//   height: 48px;
+//   text-align: center;
+//   line-height: 48px;
+//   background: rgba(0, 0, 0, 0.1);
+// }
 
+// .cart-image {
+//   position: fixed;
+//   z-index: 999;
+//   width: 80vw;
+//   height: calc(100vh - calc(((100vw - 24px) * 116) / 351));
+
+//   margin-right: auto;
+//   margin-left: auto;
+
+//   display: flex;
+//   flex-direction: row-reverse;
+//   justify-content: flex-start;
+// }
+// .user-image img {
+//   width: 30px;
+//   height: 30px;
+
+//   &:hover {
+//     cursor: pointer;
+//   }
+// }
